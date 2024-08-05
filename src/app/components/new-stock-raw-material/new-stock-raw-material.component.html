@@ -1,0 +1,66 @@
+<h1 mat-dialog-title>Add New Product</h1>
+<div mat-dialog-content>
+  <form [formGroup]="productForm">
+    <mat-form-field>
+      <mat-label for="name">Name</mat-label>
+      <input matInput id="name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="price">Price</mat-label>
+      <input matInput id="price" formControlName="price" type="number">
+    </mat-form-field>
+    <div formGroupName="quantity">
+      <mat-form-field>
+        <mat-label for="quantityValue">Quantity Value</mat-label>
+        <input matInput id="quantityValue" formControlName="value" type="number">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label for="quantityUnit">Quantity Unit</mat-label>
+        <input matInput id="quantityUnit" formControlName="unit">
+      </mat-form-field>
+    </div>
+    
+    <mat-form-field>
+       <mat-label for="createdAt">Created At</mat-label>
+       <input matInput id="createdAt" formControlName="createdAt" type="date">
+    </mat-form-field>
+    <mat-form-field>
+       <mat-label for="enteredAt">Entered At</mat-label>
+       <input matInput id="enteredAt" formControlName="enteredAt" type="date">
+    </mat-form-field>
+    <div formGroupName="group">
+      <mat-form-field>
+        <mat-label for="groupId">Group ID</mat-label>
+        <input matInput id="groupId" formControlName="id" type="number">
+      </mat-form-field>
+    </div>
+    <div formGroupName="producingFamily">
+      <mat-form-field>
+        <mat-label for="producingFamilyId">Producing Family ID</mat-label>
+        <input matInput id="producingFamilyId" formControlName="id" type="number">
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <mat-label for="canFreeze">Can Freeze</mat-label>
+      <mat-select id="canFreeze" formControlName="canFreeze">
+        <mat-option [value]="true">Yes</mat-option>
+        <mat-option [value]="false">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="prepared">Prepared</mat-label>
+      <mat-select id="prepared" formControlName="prepared">
+        <mat-option [value]="true">Yes</mat-option>
+        <mat-option [value]="false">No</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="expiredAt">Expired At</mat-label>
+      <input matInput id="expiredAt" formControlName="expiredAt" type="date">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-button (click)="save()" cdkFocusInitial>Save</button>
+</div>
